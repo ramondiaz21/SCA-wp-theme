@@ -1,0 +1,98 @@
+.custom-breadcrumb{
+  position: relative;
+  background: #f2f2f2;
+  padding: 10px 0;
+  margin-bottom: 45px;
+  color: #858585;
+  .breadcrumb{
+    margin-bottom: 0;
+    padding: 5px 0;
+  }
+  .breadcrumb-overlay{
+    position: absolute;
+    @include size(100%, 100%);
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  &.hero{
+    height: 320px;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+    @media(max-width: $screen-sm-max){
+      margin-bottom: 0;
+      height: 200px;
+    }
+    .container{
+      position: relative;
+      top: 50%;
+      @include translateY(-50%);
+      z-index: 99;
+    } 
+    .breadcrumb{
+      color: $black;
+      position: relative;
+      z-index: 99;
+      padding-top: 5px;
+      a{
+        color: $black;
+      }
+    }
+    .heading-title{
+      font-size: 28px;
+      margin-top: 0;
+      line-height: 32px;
+      position: relative;
+      z-index: 99;
+      margin: 0;
+      @media(max-width: $screen-sm-max){
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+ 
+  &.text-light{
+    .breadcrumb{
+      color: #cccccc;
+      a{
+        color: #cccccc;
+      }
+    }
+    .active{
+      color: $white;
+    }
+    .heading-title{
+      color: $white;
+    }
+  }
+}
+
+.title-layout-standard{
+  .custom-breadcrumb{
+    padding: 35px 0;
+    background: #f2f2f2;
+    margin-bottom: 45px; 
+    font-size: 14px; 
+    a{
+      color: #4c4c4c;
+      &:hover{
+        color: $black;
+      }
+    }
+    .container{
+      position: relative;
+      .heading-title{
+        right: 15px;
+        top: 50%;
+        @include translateY(-50%);
+        position: absolute;
+        z-index: 11;
+        margin-top: 0;
+      }
+    }
+  }
+}
+

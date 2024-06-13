@@ -1,0 +1,242 @@
+.portfolio-v1{
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  &:after{
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    @include size(100%, 100%); 
+    background: $black;
+    @include opacity(0);
+    z-index: 1;
+    @include transition(all 0.35s);
+  }
+  .content-inner{
+    position: absolute;
+    @include size(100%, auto);
+    left: 0;
+    bottom: -20px;
+    @include translateY(0);
+    z-index: 11;
+    @include opacity(0);
+    text-align: left;
+    @include transition(all 0.35s);
+    padding: 25px 25px 25px;
+    .title{  
+      a{
+        font-size: 18px;
+        color: $white;
+        font-weight: 600;
+        line-height: 26px;
+        font-family: $font-family-second;
+        &:hover, &:focus, &:active{
+          text-decoration: underline;
+        }
+      }
+    }
+    .category{
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1;
+      a{
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px;
+        text-transform: uppercase;
+        &:hover, &:focus, &:active{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &:hover, &:active, &:focus{
+    &:after{
+      top: 0;
+      @include opacity(0.8);
+    }
+    .content-inner{
+      @include opacity(1);
+      bottom: 0;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  &.portfolio-carousel{
+    margin-bottom: 0;
+  }
+}
+
+.no-gutter .portfolio-item-v1{
+  margin-bottom: 0;
+}
+
+.portfolio-item-v2{
+  padding: 15px;
+  background: $white;
+  .images{
+    position: relative;
+    > a{
+      position: relative;
+      display: block;
+      overflow: hidden;
+      img{
+        @include transition(all 2s);
+      }
+      &:after{
+        content: "";
+        @include size(100%, 100%);
+        @include transition(all 0.35s);
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+        @include opacity(0);
+      }
+      &:before{
+        content: "\e904";
+        font-family: 'FontAwesome';
+        @include size(40px, 40px);
+        text-align: center;
+        line-height: 40px;
+        color: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 30px;
+        margin-top: -20px;
+        margin-left: -20px;
+        z-index: 99;
+        @include transition(all 0.35s);
+        @include opacity(0);
+      }
+    }
+    .category{
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $theme-color;
+      @include border-radius(3px);
+      z-index: 9;
+      a{
+        color: $white;
+        padding: 2px 5px;
+      }
+    }
+  }
+  .content-inner{
+    position: relative;
+    @include transition(all 0.35s);
+    padding-top: 10px;
+    .title{
+      font-size: 16px;
+      font-weight: 600;
+      color: $black;
+      margin-bottom: 5px;
+      font-family: $font-family-second;
+    }
+    .summary{
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+  &:hover{
+    .image a{
+      &:after, &:before{
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+.portfolio-filter{
+  margin-bottom: 10px;
+  text-align: center;
+  ul.nav-tabs{
+    display: inline-block;
+    > li{
+      margin-bottom: 10px;
+      > a{
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        @include transition(all 0.35s);
+        @include box-shadow(none);
+        position: relative;
+        background: none!important;
+        padding: 0 5px 0!important;
+        font-family: $font-family-second;
+        &:after{
+          content: '';
+          @include size(40px, 2px);
+          background: $theme-color;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          margin-left: -20px;
+          z-index: 1;
+          @include opacity(0);
+        }
+        &.active, &:hover, &:focus, &:active{
+          &:after{
+            @include opacity(1);
+            color: $theme-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.gsc-portfolio-carousel{
+  &.remove-padding{
+    .init-carousel-owl{
+      margin-left: 0!important;
+      margin-right: 0!important;
+      .owl-item{
+        padding-left: 0!important;
+        padding-right: 0!important;
+      }
+    }
+  }
+}
+
+.single-portfolio{
+  .portfolio-content{
+    float: left;
+    width: 100%;
+    margin: 30px 0;
+    .portfolio-information{
+      float: right;
+      margin: 15px 0 15px 10px;
+      background: #f5f5f5;
+      border: 1px solid $border-color;
+      padding: 15px 15px 15px 5px;
+      min-width: 300px;
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li{
+          .label{
+            font-size: 13px;
+            min-width: 110px;
+            display: inline-block;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  .portfolio-thumbnail{
+    .owl-dots{
+      margin-top: 5px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.logged-in.admin-bar{
+   .gva-search-content.active{
+      top: 30px;
+   }
+   .header-v2, .header-v1{
+      .stuck{
+         top: 30px;
+      }
+   }
+  @media(max-width: $screen-sm-max){
+   .gva-offcanvas-content.mobile{
+      padding-top: 30px;
+   }
+  }
+}
